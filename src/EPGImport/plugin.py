@@ -307,7 +307,7 @@ class EPGImportConfig(Setup):
 
 	def updateStatus(self):
 		text = ""
-		global isFilterRunning, filterCounter
+		# global isFilterRunning, filterCounter
 		if isFilterRunning == 1:
 			text = self.filterStatusTemplate % (str(filterCounter))
 			self.setFootnote(text)
@@ -1013,7 +1013,6 @@ def WakeupDayOfWeek():
 
 
 def onBootStartCheck():
-	global autoStartTimer
 	print("[XMLTVImport] onBootStartCheck", file=log)
 	now = int(time())
 	wake = autoStartTimer.getStatus()
